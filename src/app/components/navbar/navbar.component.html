@@ -1,0 +1,38 @@
+<nav class="navbar" [class.scrolled]="isScrolled" id="navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a class="nav-logo" (click)="scrollTo('hero')">
+      <img src="assets/logo.png" alt="Deploy Logo" class="logo-img">
+      <span class="logo-text">Deploy</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links">
+      <li *ngFor="let link of navLinks">
+        <a (click)="scrollTo(link.fragment)" class="nav-link">{{ link.label }}</a>
+      </li>
+    </ul>
+
+    <!-- CTA Button -->
+    <a class="btn btn-primary nav-cta" (click)="scrollTo('contacto')">Hablemos</a>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <div class="mobile-menu-content">
+      <ul class="mobile-links">
+        <li *ngFor="let link of navLinks; let i = index" [style.animation-delay]="(i * 0.08) + 's'">
+          <a (click)="scrollTo(link.fragment)" class="mobile-link">{{ link.label }}</a>
+        </li>
+      </ul>
+      <a class="btn btn-primary mobile-cta" (click)="scrollTo('contacto')">Hablemos</a>
+    </div>
+  </div>
+</nav>

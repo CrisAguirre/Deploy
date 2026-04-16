@@ -1,0 +1,75 @@
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <div class="section-label">Testimonios</div>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-subtitle">
+        La satisfacción de nuestros clientes es nuestra mayor recompensa.
+      </p>
+    </div>
+
+    <div class="testimonial-carousel" appScrollAnimation>
+      <!-- Cards -->
+      <div class="carousel-container">
+        <div
+          class="testimonial-card"
+          *ngFor="let testimonial of testimonials; let i = index"
+          [class.active]="i === currentIndex"
+          [class.prev]="i === (currentIndex - 1 + testimonials.length) % testimonials.length"
+          [class.next]="i === (currentIndex + 1) % testimonials.length"
+        >
+          <!-- Quote Icon -->
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.15">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+          </div>
+
+          <!-- Stars -->
+          <div class="stars">
+            <svg *ngFor="let star of getStars(testimonial.rating)" width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+
+          <!-- Text -->
+          <p class="testimonial-text">"{{ testimonial.text }}"</p>
+
+          <!-- Author -->
+          <div class="testimonial-author">
+            <div class="author-avatar">{{ testimonial.initials }}</div>
+            <div class="author-info">
+              <h4 class="author-name">{{ testimonial.name }}</h4>
+              <p class="author-role">{{ testimonial.role }} — {{ testimonial.company }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn" (click)="prevSlide()" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="carousel-dots">
+          <button
+            *ngFor="let t of testimonials; let i = index"
+            class="dot"
+            [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"
+            [attr.aria-label]="'Ir al testimonio ' + (i + 1)"
+          ></button>
+        </div>
+
+        <button class="carousel-btn" (click)="nextSlide()" aria-label="Siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

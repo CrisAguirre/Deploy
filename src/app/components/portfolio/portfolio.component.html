@@ -1,0 +1,48 @@
+<section class="portfolio" id="portafolio">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <div class="section-label">Nuestro trabajo</div>
+      <h2 class="section-title">Portafolio</h2>
+      <p class="section-subtitle">
+        Proyectos que demuestran nuestra experiencia y compromiso con la excelencia digital.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div
+        class="project-card"
+        *ngFor="let project of projects; let i = index"
+        appScrollAnimation
+        [animationDelay]="i * 100"
+      >
+        <!-- Project Visual -->
+        <div class="project-visual" [style.--project-color]="project.color">
+          <div class="visual-pattern">
+            <div class="pattern-circle"></div>
+            <div class="pattern-line"></div>
+            <div class="pattern-dots">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <span class="project-category">{{ project.category }}</span>
+        </div>
+
+        <!-- Project Info -->
+        <div class="project-info">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          <div class="project-tags">
+            <span class="project-tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+          </div>
+          <a class="project-link">
+            Ver proyecto
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

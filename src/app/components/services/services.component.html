@@ -1,0 +1,61 @@
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-header" appScrollAnimation>
+      <div class="section-label">Lo que hacemos</div>
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-subtitle">
+        Soluciones digitales integrales para transformar tu presencia online y potenciar tu crecimiento.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div
+        class="service-card"
+        *ngFor="let service of services; let i = index"
+        (mouseenter)="setActive(i)"
+        (mouseleave)="clearActive()"
+        [class.is-active]="activeIndex === i"
+        appScrollAnimation
+        [animationDelay]="i * 100"
+      >
+        <!-- Icon -->
+        <div class="service-icon">
+          <!-- Code Icon -->
+          <svg *ngIf="service.icon === 'code'" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          <!-- Smartphone Icon -->
+          <svg *ngIf="service.icon === 'smartphone'" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+          <!-- Trending Up Icon -->
+          <svg *ngIf="service.icon === 'trending-up'" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+          <!-- Palette Icon -->
+          <svg *ngIf="service.icon === 'palette'" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"></circle>
+            <circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"></circle>
+            <circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"></circle>
+            <circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"></circle>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
+          </svg>
+        </div>
+
+        <h3 class="service-title">{{ service.title }}</h3>
+
+        <ul class="service-items">
+          <li *ngFor="let item of service.items">
+            <span class="item-dot"></span>
+            {{ item }}
+          </li>
+        </ul>
+
+        <div class="card-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>

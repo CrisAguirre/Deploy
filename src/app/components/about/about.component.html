@@ -1,0 +1,65 @@
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left Content -->
+      <div class="about-content" appScrollAnimation animationType="left">
+        <div class="section-label">Quiénes somos</div>
+        <h2 class="section-title">Somos Deploy</h2>
+        <p class="about-text">
+          Somos una agencia digital colombiana apasionada por crear experiencias digitales
+          excepcionales. Combinamos <strong>creatividad</strong>, <strong>tecnología</strong> y
+          <strong>estrategia</strong> para impulsar el crecimiento de nuestros clientes.
+        </p>
+        <p class="about-text">
+          Desde startups hasta empresas consolidadas, ayudamos a transformar ideas en productos
+          digitales que generan impacto real. Nuestro equipo multidisciplinario trabaja bajo
+          metodologías ágiles para entregar resultados medibles.
+        </p>
+
+        <div class="tech-stack">
+          <h4 class="stack-title">Stack tecnológico</h4>
+          <div class="tech-tags">
+            <span class="tech-tag" *ngFor="let tech of techStack">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Values -->
+      <div class="about-values" appScrollAnimation animationType="right">
+        <div
+          class="value-card"
+          *ngFor="let value of values; let i = index"
+          [style.animation-delay]="(i * 0.1) + 's'"
+        >
+          <div class="value-icon">
+            <!-- Target -->
+            <svg *ngIf="value.icon === 'target'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <!-- Zap -->
+            <svg *ngIf="value.icon === 'zap'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <!-- Shield -->
+            <svg *ngIf="value.icon === 'shield'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <!-- Users -->
+            <svg *ngIf="value.icon === 'users'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="value-content">
+            <h4 class="value-title">{{ value.title }}</h4>
+            <p class="value-desc">{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
