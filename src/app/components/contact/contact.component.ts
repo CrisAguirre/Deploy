@@ -24,19 +24,19 @@ export class ContactComponent {
     {
       icon: 'mail',
       label: 'Email',
-      value: 'info@deployagencia.com',
-      link: 'mailto:info@deployagencia.com'
+      value: 'crisaguirredev@gmail.com',
+      link: 'mailto:crisaguirredev@gmail.com'
     },
     {
       icon: 'phone',
       label: 'Teléfono',
-      value: '+57 300 123 4567',
-      link: 'tel:+573001234567'
+      value: '+57 313 773 3408',
+      link: 'https://wa.me/573137733408'
     },
     {
       icon: 'map',
       label: 'Ubicación',
-      value: 'Bogotá, Colombia',
+      value: 'San Juan de Pasto, Colombia',
       link: '#'
     }
   ];

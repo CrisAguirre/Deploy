@@ -1,9 +1,14 @@
 <section class="hero" id="hero">
-  <!-- Particles Background -->
-  <canvas #particlesCanvas class="particles-canvas"></canvas>
+  <!-- Spline 3D Background -->
+  <div class="spline-bg">
+    <spline-viewer
+      url="https://prod.spline.design/figoCXdRz9vqlgy6/scene.splinecode"
+      loading-anim-type="none">
+    </spline-viewer>
+  </div>
 
-  <!-- Gradient Overlay -->
-  <div class="hero-gradient"></div>
+  <!-- Dark Overlay for text readability -->
+  <div class="hero-overlay"></div>
 
   <!-- Content -->
   <div class="hero-content container">
@@ -33,7 +38,7 @@
         </svg>
         Nuestros Servicios
       </a>
-      <a class="btn btn-outline" (click)="scrollTo('contacto')">
+      <a class="btn btn-outline" href="https://wa.me/573137733408" target="_blank">
         Hablemos
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
