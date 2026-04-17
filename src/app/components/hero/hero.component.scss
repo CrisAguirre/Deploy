@@ -28,6 +28,15 @@
   }
 }
 
+/* Desktop/Mobile Spline Toggle */
+.spline-desktop {
+  display: block;
+}
+
+.spline-mobile {
+  display: none;
+}
+
 .hero-overlay {
   display: none;
 }
@@ -204,6 +213,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .spline-desktop {
+    display: none;
+  }
+
+  .spline-mobile {
+    display: block;
+  }
+
   .hero-content {
     padding-top: 80px;
   }
