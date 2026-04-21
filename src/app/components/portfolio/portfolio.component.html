@@ -17,7 +17,8 @@
       >
         <!-- Project Visual -->
         <div class="project-visual" [style.--project-color]="project.color">
-          <div class="visual-pattern">
+          <img *ngIf="project.image" [src]="project.image" [alt]="project.title" class="project-image" />
+          <div class="visual-pattern" *ngIf="!project.image">
             <div class="pattern-circle"></div>
             <div class="pattern-line"></div>
             <div class="pattern-dots">
@@ -34,7 +35,7 @@
           <div class="project-tags">
             <span class="project-tag" *ngFor="let tag of project.tags">{{ tag }}</span>
           </div>
-          <a class="project-link">
+          <a class="project-link" [href]="project.url || 'javascript:void(0)'" [attr.target]="project.url ? '_blank' : null" [style.cursor]="project.url ? 'pointer' : 'default'" [style.opacity]="project.url ? '1' : '0.6'">
             Ver proyecto
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="7" y1="17" x2="17" y2="7"></line>

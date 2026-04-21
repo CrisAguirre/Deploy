@@ -6,6 +6,8 @@ interface Project {
   description: string;
   tags: string[];
   color: string;
+  image?: string;
+  url?: string;
 }
 
 @Component({
@@ -16,46 +18,85 @@ interface Project {
 export class PortfolioComponent {
   projects: Project[] = [
     {
-      title: 'NovaTech Solutions',
-      category: 'Desarrollo Web',
-      description: 'Plataforma SaaS completa para gestión empresarial con dashboards en tiempo real y analítica avanzada.',
-      tags: ['Angular', 'Node.js', 'MongoDB'],
-      color: '#00d4ff'
+      title: 'Watercycle',
+      category: 'Simulador / Educación',
+      description: 'Simulador meteorológico y del ciclo del agua interactivo con animaciones isométricas.',
+      tags: ['Angular', 'Educación', 'Animación'],
+      color: '#00d4ff',
+      image: 'assets/refs/Watercycle-04-21-2026_01_19_AM.png',
+      url: 'https://simuladorps-udes.vercel.app/'
     },
     {
-      title: 'FreshMarket App',
-      category: 'Desarrollo Móvil',
-      description: 'Aplicación móvil de delivery de productos orgánicos con geolocalización y pagos integrados.',
-      tags: ['Flutter', 'Firebase', 'Stripe'],
-      color: '#0ea5e9'
+      title: 'Fretzia Bakery®',
+      category: 'Branding & E-Commerce',
+      description: 'Página web y catálogo interactivo para panadería y repostería artesanal.',
+      tags: ['Diseño', 'Web', 'Alimentos'],
+      color: '#ec4899',
+      image: 'assets/refs/Fretzia-Bakery®-04-21-2026_01_14_AM.png',
+      url: 'https://fretzia-bakery.vercel.app'
     },
     {
-      title: 'Urbana Clothing',
-      category: 'E-Commerce',
-      description: 'Tienda online de moda con experiencia de compra personalizada e integración con redes sociales.',
-      tags: ['React', 'Shopify', 'SEO'],
-      color: '#6366f1'
+      title: 'FísicaLab',
+      category: 'Educación',
+      description: 'Plataforma web para talleres interactivos enfocados en el aprendizaje de Física.',
+      tags: ['E-learning', 'Física', 'Desarrollo Web'],
+      color: '#0ea5e9',
+      image: 'assets/refs/FísicaLab-—-Talleres-Interactivos-de-Física-04-21-2026_01_13_AM.png',
+      url: 'https://simulador-phet-mp.vercel.app'
     },
     {
-      title: 'GreenEnergy Corp',
-      category: 'Marketing Digital',
-      description: 'Estrategia 360° de marketing digital que triplicó las conversiones en 6 meses para empresa de energías renovables.',
-      tags: ['Google Ads', 'SEO', 'Analytics'],
-      color: '#10b981'
+      title: 'GVS Colombia',
+      category: 'Sitio Corporativo',
+      description: 'Portal web corporativo para líderes en sistemas de seguridad en Colombia.',
+      tags: ['B2B', 'Seguridad', 'Corporativo'],
+      color: '#10b981',
+      image: 'assets/refs/GVS-Colombia-Líderes-en-sistemas-de-seguridad-04-21-2026_01_17_AM.png',
+      url: 'https://www.gvscolombia.com'
     },
     {
-      title: 'MediConnect Pro',
-      category: 'Desarrollo Web',
-      description: 'Sistema de telemedicina con videollamadas HD, gestión de citas y expedientes clínicos digitales.',
-      tags: ['Angular', 'WebRTC', 'AWS'],
-      color: '#f59e0b'
+      title: 'GVS USA Wholesale 1',
+      category: 'E-Commerce B2B',
+      description: 'Plataforma principal de distribución mayorista de sistemas de seguridad en USA.',
+      tags: ['E-Commerce', 'B2B', 'Seguridad'],
+      color: '#f59e0b',
+      image: 'assets/refs/GVS-USA-Wholesale-Security-Systems-CCTV-Networking-Hard-Drives-–-gvsusa-04-21-2026_01_15_AM.png',
+      url: 'https://shop.gvs-usa.com'
     },
     {
-      title: 'ArtSpace Gallery',
-      category: 'Diseño & Branding',
-      description: 'Identidad visual completa y sitio web inmersivo para galería de arte contemporáneo con experiencia 3D.',
-      tags: ['Three.js', 'Branding', 'UI/UX'],
-      color: '#ec4899'
+      title: 'Corte Suprema de Justicia',
+      category: 'Sistema de Consulta',
+      description: 'Sistema de consulta de providencias judiciales.',
+      tags: ['Gobierno', 'Consulta', 'Legal'],
+      color: '#ef4444',
+      image: 'assets/refs/CONSULTA-POR-TEXTO-COMPLETO-04-21-2026_01_15_AM.png',
+      url: 'https://consultaprovidencias.cortesuprema.gov.co'
+    },
+    {
+      title: 'Kemistry Clothing eShop',
+      category: 'E-Commerce / Moda',
+      description: 'Tienda en línea orientada a la moda y ropa, con un catálogo completo y moderno.',
+      tags: ['E-Commerce', 'Moda', 'Web'],
+      color: '#6366f1',
+      image: 'assets/refs/Kemistry-Clothing-eShop-04-21-2026_01_13_AM.png',
+      url: 'https://kemistry.vercel.app'
+    },
+    {
+      title: 'Inpel S.A.',
+      category: 'Catálogo Corporativo',
+      description: 'Catálogo especializado de productos eléctricos de medida y comunicación industrial.',
+      tags: ['Industria', 'Eléctrico', 'Catálogo'],
+      color: '#eab308',
+      image: 'assets/refs/Productos-eléctricos-de-medida-y-comunicación-Inpel-S-A--04-21-2026_01_15_AM.png',
+      url: 'https://www.inpel.com.co'
+    },
+    {
+      title: 'App GVS Express',
+      category: 'App Móvil / Web',
+      description: 'Landing y portal destinado para clientes Express de GVS en el ecosistema App Store.',
+      tags: ['App', 'Móvil', 'UX/UI'],
+      color: '#4f46e5',
+      image: 'assets/refs/App-GVS-Express-App-Store-04-21-2026_01_15_AM.png',
+      url: 'https://apps.apple.com'
     }
   ];
 }
