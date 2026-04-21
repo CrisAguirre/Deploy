@@ -30,9 +30,9 @@ export class ContactComponent {
     },
     {
       icon: 'phone',
-      label: 'Teléfono',
+      label: 'WhatsApp',
       value: '+57 313 773 3408',
-      link: 'https://wa.me/573137733408'
+      link: 'https://wa.me/573137733408?text=%C2%A1Hola!%20%F0%9F%91%8B%2C%20estoy%20interesado%20en%20cotizar%20un%20proyecto%20y%20me%20gustar%C3%ADa%20recibir%20una%20asesor%C3%ADa...'
     },
     {
       icon: 'map',
