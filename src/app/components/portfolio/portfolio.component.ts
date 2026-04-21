@@ -54,7 +54,7 @@ export class PortfolioComponent {
       url: 'https://www.gvscolombia.com'
     },
     {
-      title: 'GVS USA Wholesale 1',
+      title: 'GVS USA',
       category: 'E-Commerce B2B',
       description: 'Plataforma principal de distribución mayorista de sistemas de seguridad en USA.',
       tags: ['E-Commerce', 'B2B', 'Seguridad'],

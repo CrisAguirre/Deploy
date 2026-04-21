@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -41,7 +42,7 @@ export class ContactComponent {
     }
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
@@ -54,15 +55,27 @@ export class ContactComponent {
   onSubmit(): void {
     if (this.contactForm.valid) {
       this.isSubmitting = true;
-      // Simulate form submission
-      setTimeout(() => {
-        this.isSubmitting = false;
-        this.isSubmitted = true;
-        this.contactForm.reset();
-        setTimeout(() => {
-          this.isSubmitted = false;
-        }, 4000);
-      }, 1500);
+
+      // REEMPLAZA ESTA URL CON TU ENDPOINT DE FORMSPREE
+      const formspreeEndpoint = 'https://formspree.io/f/mqewybab';
+
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+      this.http.post(formspreeEndpoint, this.contactForm.value, { headers }).subscribe({
+        next: (response) => {
+          this.isSubmitting = false;
+          this.isSubmitted = true;
+          this.contactForm.reset({ service: '' });
+          setTimeout(() => {
+            this.isSubmitted = false;
+          }, 4000);
+        },
+        error: (error) => {
+          console.error('Error sending form', error);
+          this.isSubmitting = false;
+          alert('Hubo un error al enviar el mensaje. Por favor revisa el ID de Formspree.');
+        }
+      });
     } else {
       this.contactForm.markAllAsTouched();
     }
