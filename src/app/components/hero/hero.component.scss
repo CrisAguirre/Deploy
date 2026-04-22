@@ -16,7 +16,7 @@
   height: 100%;
   z-index: 0;
   overflow: hidden;
-  /* Se removió pointer-events: none; para dejar interactiva la animación de fábrica */
+  pointer-events: none; /* Desactiva la interactividad del mouse para mejorar drásticamente el rendimiento y fluidez */
 
   spline-viewer {
     width: 100%;
