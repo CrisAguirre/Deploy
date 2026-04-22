@@ -7,9 +7,9 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   stats = [
-    { value: 0, target: 50, suffix: '+', label: 'Proyectos Exitosos' },
-    { value: 0, target: 30, suffix: '+', label: 'Clientes Satisfechos' },
-    { value: 0, target: 5, suffix: '+', label: 'Años de Experiencia' },
+    { value: 0, target: 24, suffix: '+', label: 'Proyectos Exitosos' },
+    { value: 0, target: 20, suffix: '+', label: 'Clientes Satisfechos' },
+    { value: 0, target: 7, suffix: '+', label: 'Años de Experiencia' },
     { value: 0, target: 99, suffix: '%', label: 'Satisfacción' }
   ];
 
