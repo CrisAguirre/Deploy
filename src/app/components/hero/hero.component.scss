@@ -16,7 +16,7 @@
   height: 100%;
   z-index: 0;
   overflow: hidden;
-  pointer-events: none; /* Previene que el canvas intercepte los toques/scroll */
+  /* Se removió pointer-events: none; para dejar interactiva la animación de fábrica */
 
   spline-viewer {
     width: 100%;
