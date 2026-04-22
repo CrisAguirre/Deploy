@@ -1,11 +1,11 @@
 <section class="hero" id="hero">
   <!-- Spline 3D Background — Desktop -->
-  <div class="spline-bg" *ngIf="!isMobile">
+  <div class="spline-bg" *ngIf="!isMobile && isSplineVisible">
     <spline-viewer url="https://prod.spline.design/figoCXdRz9vqlgy6/scene.splinecode" loading-anim-type="none">
     </spline-viewer>
   </div>
   <!-- Spline 3D Background — Mobile -->
-  <div class="spline-bg" *ngIf="isMobile">
+  <div class="spline-bg" *ngIf="isMobile && isSplineVisible">
     <spline-viewer url="https://prod.spline.design/jNqp8ct1w9gVvHLU/scene.splinecode" loading-anim-type="none">
     </spline-viewer>
   </div>

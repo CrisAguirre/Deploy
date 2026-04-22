@@ -1,11 +1,11 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements OnInit {
+export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   stats = [
     { value: 0, target: 24, suffix: '+', label: 'Proyectos Exitosos' },
     { value: 0, target: 20, suffix: '+', label: 'Clientes Satisfechos' },
@@ -15,10 +15,32 @@ export class HeroComponent implements OnInit {
 
   private countersStarted = false;
   isMobile: boolean = false;
+  isSplineVisible: boolean = true;
+  private observer!: IntersectionObserver;
+
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     this.checkScreenSize();
     setTimeout(() => this.animateCounters(), 800);
+  }
+
+  ngAfterViewInit(): void {
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          this.isSplineVisible = entry.isIntersecting;
+        });
+      },
+      { threshold: 0 }
+    );
+    this.observer.observe(this.el.nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
   @HostListener('window:resize', ['$event'])
