@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -14,9 +14,21 @@ export class HeroComponent implements OnInit {
   ];
 
   private countersStarted = false;
+  isMobile: boolean = false;
 
   ngOnInit(): void {
+    this.checkScreenSize();
     setTimeout(() => this.animateCounters(), 800);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    // 768px is the breakpoint in CSS for mobile view
+    this.isMobile = window.innerWidth <= 768;
   }
 
   scrollTo(id: string): void {

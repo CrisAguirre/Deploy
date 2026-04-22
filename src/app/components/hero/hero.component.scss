@@ -251,3 +251,28 @@
     letter-spacing: -0.5px;
   }
 }
+
+.logo-img2 {
+  height: 1.2em; /* Se escala automáticamente con el tamaño del texto h1 */
+  width: auto;
+  vertical-align: middle;
+  margin: 0 12px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3));
+  position: relative;
+  top: -4px; /* Ajuste fino para centrar con el texto */
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.title-line {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8em; /* Reduce el tamaño ligeramente (aprox 4 pts) manteniendo la responsividad */
+}
