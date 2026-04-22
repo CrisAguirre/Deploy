@@ -214,12 +214,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .spline-desktop {
-    display: none;
-  }
-
-  .spline-mobile {
-    display: block;
+  .spline-bg {
+    /* Desplaza la animación hacia arriba para que el centro quede más cerca del header */
+    top: -35vh;
+    height: 135vh;
   }
 
   .hero-content {
